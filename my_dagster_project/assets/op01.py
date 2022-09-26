@@ -24,8 +24,8 @@ def get_file_sizes():
 def file_sizes_job():
     get_file_sizes()
 
-if __name__ == "__main__":
-    print("Runnnn!")
-    materialize([my_op,my_opp])
-    result = file_sizes_job.execute_in_process()
-    print(result)
+# if __name__ == "__main__":
+#     print("Runnnn!")
+#     materialize([my_op,my_opp])
+#     result = file_sizes_job.execute_in_process()
+#     print(result)
