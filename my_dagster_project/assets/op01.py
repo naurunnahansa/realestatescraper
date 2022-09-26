@@ -1,14 +1,14 @@
-from dagster import op, asset, materialize, job
+import os
+from dagster import op, asset, materialize, job,get_dagster_logger
 from typing import Tuple
 
 @asset
 def my_op():
     return "hello"
-    
+
 @asset
 def my_opp():
     return "opp"
-
 
 @op
 def myApple():
@@ -17,7 +17,6 @@ def myApple():
 @job
 def file_sizes_job():
     myApple()
-
 
 if __name__ == "__main__":
     print("Runnnn!")
