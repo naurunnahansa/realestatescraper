@@ -2,10 +2,6 @@ from dagster import op, asset, materialize
 from typing import Tuple
 
 @asset
-def my_input_op(abc, xyz):
-    pass
-
-@asset
 def my_op():
     return "hello"
     
@@ -15,5 +11,5 @@ def my_opp():
 
 if __name__ == "__main__":
     print("Runnnn!")
-    materialize([my_input_op,my_op,my_opp])
-    print(my_opp())
+    materialize([my_op])
+    print(my_op())
