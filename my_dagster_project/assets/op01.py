@@ -16,4 +16,5 @@ def myApple():
 if __name__ == "__main__":
     print("Runnnn!")
     materialize([my_op,my_opp])
+    materialize([myApple])
     print(my_op())
