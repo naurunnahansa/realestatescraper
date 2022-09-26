@@ -1,15 +1,15 @@
 from dagster import op, asset, materialize
 from typing import Tuple
 
-@op
+@asset
 def my_input_op(abc, xyz):
     pass
 
-@op
+@asset
 def my_op():
     return "hello"
     
-@op
+@asset
 def my_opp():
     return "opp"
 
