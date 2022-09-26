@@ -1,4 +1,4 @@
-from dagster import op, asset, materialize
+from dagster import op, asset, materialize, job
 from typing import Tuple
 
 @asset
@@ -10,12 +10,16 @@ def my_opp():
     return "opp"
 
 
+@op
+def myApple():
+    return "Apple"
+
+@job
+def file_sizes_job():
+    myApple()
+
+
 if __name__ == "__main__":
     print("Runnnn!")
     materialize([my_op,my_opp])
-
-    @op
-    def myApple():
-        return "Apple"
-
-    print(my_op())
+    result = file_sizes_job.execute_in_process()
