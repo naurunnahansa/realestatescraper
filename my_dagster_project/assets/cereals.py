@@ -1,6 +1,8 @@
 import csv
 import requests
-from dagster import asset
+from dagster import asset, materialize
+
+
 
 
 @asset
@@ -10,3 +12,7 @@ def cereals():
     cereal_rows = [row for row in csv.DictReader(lines)]
 
     return cereal_rows
+
+
+if __name__ == "__main__":
+    materialize([cereals])
